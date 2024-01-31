@@ -5,10 +5,10 @@ public class LoginDetails {
         Scanner scanner = new Scanner(System.in);
 
         // Set a predefined username and password
-        String correctUsername = "user123";
-        String correctPassword = "pass123";
+        String correctUsername = "user@24";
+        String correctPassword = "pass2024";
 
-        // Initialize the number of allowed attempts
+        // Number of allowed attempts remaining
         int attempts = 3;
 
         // Main loop for login attempts
@@ -20,7 +20,7 @@ public class LoginDetails {
             System.out.print("Enter password: ");
             String password = scanner.nextLine();
 
-            // Check if the entered credentials are correct
+            // Check for correct credentials
             if (username.equals(correctUsername) && password.equals(correctPassword)) {
                 System.out.println("Login successful! Welcome, " + username);
                 break; // Exit the loop if login is successful
