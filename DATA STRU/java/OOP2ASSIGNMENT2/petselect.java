@@ -22,21 +22,19 @@ public class petselect extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Initialize radio buttons
         dogRadioButton = new JRadioButton("Dog");
         catRadioButton = new JRadioButton("Cat");
         birdRadioButton = new JRadioButton("Bird");
         pigRadioButton = new JRadioButton("Pig");
         rabbitRadioButton = new JRadioButton("Rabbit");
 
-        // Add action listeners to radio buttons
         dogRadioButton.addActionListener(this);
         catRadioButton.addActionListener(this);
         birdRadioButton.addActionListener(this);
         pigRadioButton.addActionListener(this);
         rabbitRadioButton.addActionListener(this);
 
-        // Button group to ensure only one radio button can be selected at a time
+
         ButtonGroup group = new ButtonGroup();
         group.add(dogRadioButton);
         group.add(catRadioButton);
@@ -44,18 +42,18 @@ public class petselect extends JFrame implements ActionListener {
         group.add(pigRadioButton);
         group.add(rabbitRadioButton);
 
-        // Initialize pet image label
+
         petImageLabel = new JLabel();
         petImageLabel.setHorizontalAlignment(JLabel.CENTER);
         petImageLabel.setVerticalAlignment(JLabel.CENTER);
 
-        // Initialize check button and result label
+
         checkButton = new JButton("Check");
         checkButton.addActionListener(this);
         resultLabel = new JLabel();
         resultLabel.setHorizontalAlignment(JLabel.CENTER);
 
-         // Add components to the frame
+
          JPanel radioButtonPanel = new JPanel(new GridLayout(5, 1));
          radioButtonPanel.add(dogRadioButton);
          radioButtonPanel.add(catRadioButton);
@@ -71,11 +69,10 @@ public class petselect extends JFrame implements ActionListener {
          add(petImageLabel, BorderLayout.CENTER);
          add(controlPanel, BorderLayout.SOUTH);
  
-         // Randomly display a pet image
+ 
          displayRandomPetImage();
      }
  
-     // Display a random pet image
      private void displayRandomPetImage() {
          Random random = new Random();
          int randomNumber = random.nextInt(5); // Generate a random number between 0 and 4
@@ -85,22 +82,26 @@ public class petselect extends JFrame implements ActionListener {
          petImageLabel.setIcon(petImage);
      }
  
-     // Check if the selected pet is correct
      private void checkPet() {
          if (dogRadioButton.isSelected() && "Dog".equals(correctPetType)) {
              resultLabel.setText("Correct!");
+             resultLabel.setForeground(Color.BLACK);
              displayRandomPetImage();
          } else if (catRadioButton.isSelected() && "Cat".equals(correctPetType)) {
              resultLabel.setText("Correct!");
+             resultLabel.setForeground(Color.BLACK);
              displayRandomPetImage();
          } else if (birdRadioButton.isSelected() && "Bird".equals(correctPetType)) {
              resultLabel.setText("Correct!");
+             resultLabel.setForeground(Color.BLACK);
              displayRandomPetImage();
          } else if (pigRadioButton.isSelected() && "Pig".equals(correctPetType)) {
              resultLabel.setText("Correct!");
+             resultLabel.setForeground(Color.BLACK);
              displayRandomPetImage();
          } else if (rabbitRadioButton.isSelected() && "Rabbit".equals(correctPetType)) {
              resultLabel.setText("Correct!");
+             resultLabel.setForeground(Color.BLACK);
              displayRandomPetImage();
          } else {
              resultLabel.setText("Incorrect!");
